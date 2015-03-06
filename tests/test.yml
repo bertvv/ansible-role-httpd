@@ -2,4 +2,4 @@
 - hosts: all
   sudo: true
   roles:
-    - NAME
+    - httpd
