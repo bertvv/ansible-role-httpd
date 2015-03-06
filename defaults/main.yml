@@ -1,0 +1,23 @@
+# roles/httpd/defaults/main.yml
+---
+
+# Main configuration
+httpd_ServerRoot: '/etc/httpd'
+httpd_Listen: 80
+httpd_ServerAdmin: root@localhost
+httpd_DocumentRoot: '/var/www/html'
+
+httpd_ErrorLog: logs/error_log
+httpd_AccessLog: logs/access_log
+httpd_LogLevel: warn
+
+# mod_ssl
+httpd_Listen_ssl: 443
+
+httpd_ErrorLog_ssl: logs/ssl_error_log
+httpd_AccessLog_ssl: logs/ssl_access_log
+httpd_LogLevel_ssl: warn
+
+httpd_SSLCertificateFile:  /etc/pki/tls/certs/localhost.crt
+httpd_SSLCertificateKeyFile: /etc/pki/tls/private/localhost.key
+
