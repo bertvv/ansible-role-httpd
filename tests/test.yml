@@ -1,5 +1,7 @@
 ---
 - hosts: all
   sudo: true
+  vars:
+    httpd_scripting: php
   roles:
     - httpd
