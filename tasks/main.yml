@@ -10,6 +10,16 @@
     - mod_ssl
   tags: httpd
 
+- name: Install PHP support if needed
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - php
+    - php-xml
+  when: httpd_scripting is defined and httpd_scripting == "php"
+  tags: httpd
+
 - name: Ensure Apache is always running
   service:
     name: httpd
