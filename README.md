@@ -1,9 +1,14 @@
 # Ansible role `httpd`
 
-An Ansible role for installing and configuring the Apache web server for RHEL/CentOS 7. Specifically, the responsibilities of this role are to:
+A simple Ansible role for installing and configuring the Apache web server for RHEL/CentOS 7. Specifically, the responsibilities of this role are to:
 
-- install the necessary packages
-- maintain the configuration file
+- Install the necessary packages;
+- Maintain the main configuration file;
+- Maintain the configuration file for `mod_ssl`.
+
+HTTPS/TLS is enabled, by default using the standard self-signed certificate. You can provide your own certificate.
+
+Currently, no virtual hosts or other features are provided
 
 ## Requirements
 
@@ -41,11 +46,11 @@ See the [test playbook](tests/test.yml)
 
 ## Testing
 
-The `tests` directory contains acceptance tests for this role in the form of a Vagrant environment. The directory `tests/roles/NAME` is a symbolic link that should point to the root of this project in order to work. To create it, do
+The `tests` directory contains acceptance tests for this role in the form of a Vagrant environment. The directory `tests/roles/httpd` is a symbolic link that should point to the root of this project in order to work. To create it, do
 
 ```ShellSession
 $ cd tests/
-$ ln -frs ../../PROJECT_DIR roles/NAME
+$ ln -frs ../../bertvv.httpd roles/httpd
 ```
 
 You may want to change the base box into one that you like. The current one is based on Box-Cutter's [CentOS Packer template](https://github.com/box-cutter/centos-vm).
