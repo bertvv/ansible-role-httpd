@@ -1,4 +1,20 @@
-# roles/NAME/tasks/main.yml
+# roles/httpd/tasks/main.yml
 ---
+
+- name: Ensure Apache is installed
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - httpd
+    - mod_ssl
+  tags: httpd
+
+- name: Ensure Apache is always running
+  service:
+    name: httpd
+    state: started
+    enabled: yes
+  tags: httpd
 
 
