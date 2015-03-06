@@ -53,7 +53,7 @@ $ cd tests/
 $ ln -frs ../../bertvv.httpd roles/httpd
 ```
 
-You may want to change the base box into one that you like. The current one is based on Box-Cutter's [CentOS Packer template](https://github.com/box-cutter/centos-vm).
+You may want to change the base box into one that you like. The current one is based on Box-Cutter's [CentOS Packer template](https://github.com/boxcutter/centos).
 
 The playbook [`test.yml`](tests/test.yml) applies the role to a VM, setting role variables.
 
