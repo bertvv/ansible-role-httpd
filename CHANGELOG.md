@@ -7,6 +7,7 @@ This file adheres to the guidelines of [http://keepachangelog.com/](http://keepa
 ## [Unreleased][unreleased]
 ### Added
 
+- Fedora support
 - more SSL configuration options
 - httpd_ServerTokens variable
 

@@ -9,6 +9,10 @@ galaxy_info:
   - name: EL
     versions:
       - 7
+  - name: Fedora
+    versions:
+      - 21
+      - 22
   categories:
     - web
 dependencies: []
