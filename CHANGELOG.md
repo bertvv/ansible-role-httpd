@@ -7,6 +7,7 @@ This file adheres to the guidelines of [http://keepachangelog.com/](http://keepa
 ## [Unreleased][unreleased]
 ### Added
 
+- more SSL configuration options
 - httpd_ServerTokens variable
 
 ## 1.1.0 - 2015-03-06

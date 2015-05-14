@@ -21,8 +21,9 @@ TransferLog {{ httpd_AccessLog }}
 LogLevel {{ httpd_LogLevel_ssl }}
 
 SSLEngine on
-SSLProtocol all -SSLv2
-SSLCipherSuite HIGH:MEDIUM:!aNULL:!MD5
+SSLProtocol {{ httpd_SSLProtocol }}
+SSLCipherSuite {{ httpd_SSLCipherSuite }}
+SSLHonorCipherOrder {{ httpd_SSLHonorCipherOrder }}
 
 # Certificate files
 SSLCertificateFile {{ httpd_SSLCertificateFile }}
