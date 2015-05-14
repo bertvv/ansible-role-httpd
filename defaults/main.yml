@@ -5,6 +5,7 @@
 httpd_ServerRoot: '/etc/httpd'
 httpd_Listen: 80
 httpd_ServerAdmin: root@localhost
+httpd_ServerTokens: Prod
 httpd_DocumentRoot: '/var/www/html'
 
 httpd_ErrorLog: logs/error_log

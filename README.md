@@ -33,6 +33,7 @@ If no variables are set, applying this role will result in a configuration equiv
 | `httpd_scripting`               | -                                  | Allowed values: `php` |
 | `httpd_ServerAdmin`             | root@localhost                     |                       |
 | `httpd_ServerRoot`              | '/etc/httpd'                       |                       |
+| `httpd_ServerTokens`            | Prod                               |                       |
 | `httpd_SSLCACertificateFile`    | -                                  |                       |
 | `httpd_SSLCertificateChainFile` | -                                  |                       |
 | `httpd_SSLCertificateFile`      | /etc/pki/tls/certs/localhost.crt   |                       |
