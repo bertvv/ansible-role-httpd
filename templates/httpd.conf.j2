@@ -17,6 +17,8 @@ ServerAdmin {{ httpd_ServerAdmin }}
 ServerName {{ httpd_ServerName }}
 {% endif %}
 
+ServerTokens {{ httpd_ServerTokens }}
+
 # Deny general access to filesystem.
 <Directory />
     AllowOverride none

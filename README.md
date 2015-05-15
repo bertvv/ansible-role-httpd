@@ -1,6 +1,6 @@
 # Ansible role `httpd`
 
-A simple Ansible role for installing and configuring the Apache web server for RHEL/CentOS 7. Specifically, the responsibilities of this role are to:
+A simple Ansible role for installing and configuring the Apache web server for RHEL/CentOS 7 and Fedora 21+. Specifically, the responsibilities of this role are to:
 
 - Install the necessary packages;
 - Maintain the main configuration file;
@@ -33,10 +33,14 @@ If no variables are set, applying this role will result in a configuration equiv
 | `httpd_scripting`               | -                                  | Allowed values: `php` |
 | `httpd_ServerAdmin`             | root@localhost                     |                       |
 | `httpd_ServerRoot`              | '/etc/httpd'                       |                       |
+| `httpd_ServerTokens`            | Prod                               |                       |
 | `httpd_SSLCACertificateFile`    | -                                  |                       |
 | `httpd_SSLCertificateChainFile` | -                                  |                       |
 | `httpd_SSLCertificateFile`      | /etc/pki/tls/certs/localhost.crt   |                       |
 | `httpd_SSLCertificateKeyFile`   | /etc/pki/tls/private/localhost.key |                       |
+| `httpd_SSLProtocol`             | 'all -SSLv3 -TLSv1'                |                       |
+| `httpd_SSLCipherSuite`          | See [default variables](defaults/main.yml) |               |
+| `httpd_SSLHonorCipherOrder`     | 'on'                               |                       |
 
 ## Dependencies
 

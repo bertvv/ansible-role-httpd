@@ -1,5 +1,5 @@
 # Apache TLS configuration
-# 
+#
 # {{ ansible_managed }}
 
 # Listen on port
@@ -21,8 +21,9 @@ TransferLog {{ httpd_AccessLog }}
 LogLevel {{ httpd_LogLevel_ssl }}
 
 SSLEngine on
-SSLProtocol all -SSLv2
-SSLCipherSuite HIGH:MEDIUM:!aNULL:!MD5
+SSLProtocol {{ httpd_SSLProtocol }}
+SSLCipherSuite {{ httpd_SSLCipherSuite }}
+SSLHonorCipherOrder {{ httpd_SSLHonorCipherOrder }}
 
 # Certificate files
 SSLCertificateFile {{ httpd_SSLCertificateFile }}
@@ -48,5 +49,4 @@ BrowserMatch "MSIE [2-5]" \
 CustomLog logs/ssl_request_log \
           "%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"
 
-</VirtualHost>                                  
-
+</VirtualHost>

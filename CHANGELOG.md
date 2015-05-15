@@ -4,6 +4,13 @@ This file contains al notable changes to the bertvv.httpd Ansible role.
 
 This file adheres to the guidelines of [http://keepachangelog.com/](http://keepachangelog.com/). Versioning follows [Semantic Versioning](http://semver.org/).
 
+## [Unreleased][unreleased]
+### Added
+
+- Fedora support
+- more SSL configuration options
+- httpd_ServerTokens variable
+
 ## 1.1.0 - 2015-03-06
 
 ### Added
