@@ -1,23 +1,23 @@
 # roles/httpd/tasks/main.yml
 ---
 
+- include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}.yml"
+    - "{{ ansible_os_family }}.yml"
+
 - name: Ensure Apache is installed
-  yum:
+  package:
     name: "{{ item }}"
     state: present
-  with_items:
-    - httpd
-    - mod_ssl
+  with_items: "{{ httpd_packages }}"
   tags: httpd
 
-- name: Install PHP support if needed
-  yum:
+- name: Install scripting support if needed
+  package:
     name: "{{ item }}"
     state: present
-  with_items:
-    - php
-    - php-xml
-  when: httpd_scripting is defined and httpd_scripting == "php"
+  with_items: "{{ httpd_scripting_packages[httpd_scripting] }}"
   tags: httpd
 
 - name: Ensure Apache is always running
@@ -30,7 +30,7 @@
 - name: Install main configuration file
   template:
     src: httpd.conf.j2
-    dest: /etc/httpd/conf/httpd.conf
+    dest: "{{ httpd_config }}"
     owner: root
     group: root
     setype: httpd_config_t
@@ -41,7 +41,7 @@
 - name: Install mod_ssl configuration file
   template:
     src: ssl.conf.j2
-    dest: /etc/httpd/conf.d/ssl.conf
+    dest: "{{ httpd_ssl_config }}"
     owner: root
     group: root
     setype: httpd_config_t

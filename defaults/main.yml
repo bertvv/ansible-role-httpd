@@ -1,6 +1,9 @@
 # roles/httpd/defaults/main.yml
 ---
 
+# Scripting support
+httpd_scripting: 'none'
+
 # Main configuration
 httpd_ServerRoot: '/etc/httpd'
 httpd_Listen: 80
