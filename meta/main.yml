@@ -1,19 +1,18 @@
 ---
 galaxy_info:
   author: Bert Van Vreckem
-  description: Install and manage the Apache web server under RHEL/CentOS 7
-  company:
+  description: Install and manage the Apache web server on a RedHat based Linux distribution
   license: BSD
-  min_ansible_version: 1.7
+  min_ansible_version: 2.0
   platforms:
-  - name: EL
-    versions:
-      - 7
-  - name: Fedora
-    versions:
-      - 21
-      - 22
+    - name: EL
+      versions:
+        - 7
+    - name: Fedora
+      versions:
+        - 21
+        - 22
+        - 23
   categories:
     - web
 dependencies: []
-version: 1.2.0

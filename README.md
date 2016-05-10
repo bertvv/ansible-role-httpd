@@ -40,7 +40,7 @@ If no variables are set, applying this role will result in a configuration equiv
 | `httpd_ServerAdmin`             | root@localhost                             |                                                                                       |
 | `httpd_ServerRoot`              | '/etc/httpd'                               |                                                                                       |
 | `httpd_ServerTokens`            | Prod                                       | See [documentation](https://httpd.apache.org/docs/current/mod/core.html#servertokens) |
-| `httpd_scripting`               | -                                          | Allowed values: `php`                                                                 |
+| `httpd_scripting`               | 'none'                                     | Allowed values: `php`                                                                 |
 
 ## Dependencies
 
