@@ -48,30 +48,26 @@ No dependencies.
 
 ## Example Playbook
 
-See the [test playbook](tests/test.yml)
+See the test playbooks in either the [Vagrant](https://github.com/bertvv/ansible-role-ROLENAME/blob/vagrant-tests/test.yml) or [Docker](https://github.com/bertvv/ansible-role-ROLENAME/blob/docker-tests/test.yml) test environment. See the section Testing for details.
 
 ## Testing
 
-The `tests` directory contains acceptance tests for this role in the form of a Vagrant environment. The directory `tests/roles/httpd` is a symbolic link that should point to the root of this project in order to work. To create it, do
+There are two types of test environments available. One powered by Vagrant, another by Docker. The latter is suitable for running automated tests on Travis-CI. Test code is kept in separate orphan branches. For details of how to set up these test environments on your own machine, see the README files in the respective branches:
 
-```ShellSession
-$ cd tests/
-$ ln -frs ../../bertvv.httpd roles/httpd
-```
-
-You may want to change the base box into one that you like. The current one is based on Box-Cutter's [CentOS Packer template](https://github.com/boxcutter/centos).
-
-The playbook [`test.yml`](tests/test.yml) applies the role to a VM, setting role variables.
+- Vagrant: [vagrant-tests](https://github.com/bertvv/ansible-role-ROLENAME/tree/vagrant-tests)
+- Docker: [docker-tests](https://github.com/bertvv/ansible-role-ROLENAME/tree/docker-tests)
 
 ## Contributing
 
-Issues, feature requests, ideas are appreciated and can be posted in the Issues section. Pull requests are also very welcome. Preferably, create a topic branch and when submitting, squash your commits into one (with a descriptive message).
+Issues, feature requests, ideas are appreciated and can be posted in the Issues section.
+
+Pull requests are also very welcome. The best way to submit a PR is by first creating a fork of this Github project, then creating a topic branch for the suggested change and pushing that branch to your own fork. Github can then easily create a PR based on that branch.
 
 ## License
 
-BSD
+2-clause BSD license, see [LICENSE.md](LICENSE.md)
 
-## Author Information
+## Contributors
 
-Bert Van Vreckem (bert.vanvreckem@gmail.com)
-
+- [Bert Van Vreckem](https://github.com/bertvv/) (maintainer)
+- [Richard Marko](https://github.com/sorki)

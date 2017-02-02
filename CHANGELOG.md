@@ -19,9 +19,9 @@ This file adheres to the guidelines of [http://keepachangelog.com/](http://keepa
 
 ### Added
 
-- Fedora support
-- more SSL configuration options
-- `httpd_ServerTokens` variable
+- Fedora support (credit [Richard Marko](https://github.com/sorki))
+- more SSL configuration options (credit [Richard Marko](https://github.com/sorki)
+- `httpd_ServerTokens` variable (credit [Richard Marko](https://github.com/sorki)
 
 ## 1.1.0 - 2015-03-06
 
