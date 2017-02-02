@@ -1,5 +1,19 @@
 ---
 - hosts: all
   become: true
+  vars:
+    httpd_scripting: 'php'
   roles:
     - httpd
+  post_tasks:
+    - name: ensure firewall is not running, not a concern of this role
+      service:
+        name: firewalld
+        state: stopped
+    - name: Install demo php script
+      lineinfile:
+        dest: /var/www/html/index.php
+        line: '<?php phpinfo(); ?>'
+        regexp: '^<\?php'
+        create: yes
+
