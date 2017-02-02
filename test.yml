@@ -5,3 +5,8 @@
   become: true
   roles:
     - role_under_test
+  post_tasks:
+    - name: Install demo page
+      copy:
+        dest: /var/www/html/index.html
+        content: 'hello world'
