@@ -48,14 +48,14 @@ No dependencies.
 
 ## Example Playbook
 
-See the test playbooks in either the [Vagrant](https://github.com/bertvv/ansible-role-ROLENAME/blob/vagrant-tests/test.yml) or [Docker](https://github.com/bertvv/ansible-role-ROLENAME/blob/docker-tests/test.yml) test environment. See the section Testing for details.
+See the test playbooks in either the [Vagrant](https://github.com/bertvv/ansible-role-httpd/blob/vagrant-tests/test.yml) or [Docker](https://github.com/bertvv/ansible-role-httpd/blob/docker-tests/test.yml) test environment. See the section Testing for details.
 
 ## Testing
 
 There are two types of test environments available. One powered by Vagrant, another by Docker. The latter is suitable for running automated tests on Travis-CI. Test code is kept in separate orphan branches. For details of how to set up these test environments on your own machine, see the README files in the respective branches:
 
-- Vagrant: [vagrant-tests](https://github.com/bertvv/ansible-role-ROLENAME/tree/vagrant-tests)
-- Docker: [docker-tests](https://github.com/bertvv/ansible-role-ROLENAME/tree/docker-tests)
+- Vagrant: [vagrant-tests](https://github.com/bertvv/ansible-role-httpd/tree/vagrant-tests)
+- Docker: [docker-tests](https://github.com/bertvv/ansible-role-httpd/tree/docker-tests)
 
 ## Contributing
 
