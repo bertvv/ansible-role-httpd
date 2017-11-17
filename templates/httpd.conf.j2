@@ -95,5 +95,14 @@ AddDefaultCharset UTF-8
 
 EnableSendfile on
 
+{% if httpd_StatusEnabled %}
+<Location "{{ httpd_StatusLocation }}">
+    SetHandler server-status
+    Require {{ httpd_StatusRequire }}
+</Location>
+{% endif %}
+
+ExtendedStatus On
+
 # Load other configuration files
 IncludeOptional conf.d/*.conf

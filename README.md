@@ -41,6 +41,10 @@ If no variables are set, applying this role will result in a configuration equiv
 | `httpd_ServerRoot`              | '/etc/httpd'                               |                                                                                       |
 | `httpd_ServerTokens`            | Prod                                       | See [documentation](https://httpd.apache.org/docs/current/mod/core.html#servertokens) |
 | `httpd_scripting`               | 'none'                                     | Allowed values: `php`                                                                 |
+| `httpd_StatusEnable`            | 'false'                                    | Enable mod_status                                                                     |
+| `httpd_StatusLocation`          | '/server-status'                           | Location for mod_status status page                                                   |
+| `httpd_StatusRequire`           | 'host localhost'                           | Access control for mod_status                                                         |
+
 
 ## Dependencies
 
