@@ -32,6 +32,6 @@ httpd_SSLCipherSuite: 'ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256
 httpd_SSLHonorCipherOrder: 'on'
 
 httpd_StatusEnable: false
-httpd_StatusLocation: "/server-status"
-httpd_StatusRequire: "host localhost"
+httpd_StatusLocation: '/server-status'
+httpd_StatusRequire: 'host localhost'
 httpd_ExtendedStatus: on
