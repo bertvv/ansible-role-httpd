@@ -75,3 +75,4 @@ Pull requests are also very welcome. The best way to submit a PR is by first cre
 
 - [Bert Van Vreckem](https://github.com/bertvv/) (maintainer)
 - [Richard Marko](https://github.com/sorki)
+- [Lander Van den Bulcke](https://github.com/landervdb/)

@@ -1,0 +1,6 @@
+ExtendedStatus on 
+
+<Location "{{ httpd_StatusLocation }}">
+    SetHandler server-status
+    Require {{ httpd_StatusRequire }}
+</Location>
