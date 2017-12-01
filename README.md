@@ -45,7 +45,7 @@ If no variables are set, applying this role will result in a configuration equiv
 | `httpd_StatusEnable`            | false                                      | Enable mod_status                                                                     |
 | `httpd_StatusLocation`          | '/server-status'                           | Location for mod_status status page                                                   |
 | `httpd_StatusRequire`           | 'host localhost'                           | Access control for mod_status                                                         |
-
+| `httpd_ExtendedStatus`          | on                                         | Enable ExtendedStatus                                                                 |
 
 ## Dependencies
 
