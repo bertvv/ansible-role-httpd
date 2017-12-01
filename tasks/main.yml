@@ -41,7 +41,7 @@
 
 - name: Install status configuration file
   template:
-    src: status.conf.j2
+    src: etc_httpd_conf.d_status.conf.j2
     dest: "{{ httpd_status_config }}"
     owner: root
     group: root
