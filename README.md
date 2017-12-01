@@ -5,6 +5,7 @@ A simple Ansible role for installing and configuring the Apache web server for R
 - Install the necessary packages;
 - Maintain the main configuration file;
 - Maintain the configuration file for `mod_ssl`.
+- Enable and maintain the configuration file for `mod_status`.
 - Install support for scripting language (currently only PHP)
 
 HTTPS/TLS is enabled, by default using the standard self-signed certificate. You can provide your own certificate by setting the appropriate role variables.
@@ -41,7 +42,7 @@ If no variables are set, applying this role will result in a configuration equiv
 | `httpd_ServerRoot`              | '/etc/httpd'                               |                                                                                       |
 | `httpd_ServerTokens`            | Prod                                       | See [documentation](https://httpd.apache.org/docs/current/mod/core.html#servertokens) |
 | `httpd_scripting`               | 'none'                                     | Allowed values: `php`                                                                 |
-| `httpd_StatusEnable`            | 'false'                                    | Enable mod_status                                                                     |
+| `httpd_StatusEnable`            | false                                      | Enable mod_status                                                                     |
 | `httpd_StatusLocation`          | '/server-status'                           | Location for mod_status status page                                                   |
 | `httpd_StatusRequire`           | 'host localhost'                           | Access control for mod_status                                                         |
 
