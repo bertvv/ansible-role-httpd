@@ -13,3 +13,4 @@ httpd_scripting_packages:
 
 httpd_config: /etc/httpd/conf/httpd.conf
 httpd_ssl_config:  /etc/httpd/conf.d/ssl.conf
+httpd_status_config: /etc/httpd/conf.d/status.conf

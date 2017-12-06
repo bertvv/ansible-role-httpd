@@ -39,6 +39,18 @@
   notify: restart httpd
   tags: httpd
 
+- name: Install status configuration file
+  template:
+    src: etc_httpd_conf.d_status.conf.j2
+    dest: "{{ httpd_status_config }}"
+    owner: root
+    group: root
+    setype: httpd_config_t
+    mode: '0644'
+  notify: restart httpd
+  tags: httpd
+  when: httpd_StatusEnable
+
 - name: Install mod_ssl configuration file
   template:
     src: ssl.conf.j2
