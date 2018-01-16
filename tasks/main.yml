@@ -7,6 +7,12 @@
     - "{{ ansible_os_family }}.yml"
   tags: httpd
 
+- name: Copy Certificate Files
+  copy:
+    src: "{{ item }}"
+    dest: "{{ httpd_SSLCertificateKeyFile_Dest }}"
+  with_items: "{{ httpd_SSLCertificateKeyFile_Source }}"
+
 - name: Ensure Apache is installed
   package:
     name: "{{ item }}"

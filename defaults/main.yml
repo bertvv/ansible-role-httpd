@@ -22,6 +22,7 @@ httpd_ErrorLog_ssl: logs/ssl_error_log
 httpd_AccessLog_ssl: logs/ssl_access_log
 httpd_LogLevel_ssl: warn
 
+httpd_SSLCertificateKeyFile_Dest: /etc/pki/tls/certs/
 httpd_SSLCertificateFile:  /etc/pki/tls/certs/localhost.crt
 httpd_SSLCertificateKeyFile: /etc/pki/tls/private/localhost.key
 
