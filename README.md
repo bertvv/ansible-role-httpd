@@ -32,7 +32,9 @@ If no variables are set, applying this role will result in a configuration equiv
 | `httpd_LogLevel_ssl`            | warn                                       |                                                                                       |
 | `httpd_LogLevel`                | warn                                       |                                                                                       |
 | `httpd_SSLCACertificateFile`    | -                                          |                                                                                       |
-| `httpd_SSLCertificateChainFile` | -                                          |                                                                                       |
+| `httpd_SSLCertificateChainFile` | -                                          |                                                                                                                                                                           |
+| `httpd_SSLCertificateKeyFile_Source`            | -                                       | The location of the .crt and .key files |
+| `httpd_SSLCertificateKeyFile_Dest`            | /etc/pki/tls/certs/                                       | The destination directory where certification files will be pasted. |
 | `httpd_SSLCertificateFile`      | /etc/pki/tls/certs/localhost.crt           |                                                                                       |
 | `httpd_SSLCertificateKeyFile`   | /etc/pki/tls/private/localhost.key         |                                                                                       |
 | `httpd_SSLCipherSuite`          | See [default variables](defaults/main.yml) |                                                                                       |
