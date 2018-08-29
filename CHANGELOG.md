@@ -4,6 +4,12 @@ This file contains al notable changes to the bertvv.httpd Ansible role.
 
 This file adheres to the guidelines of [http://keepachangelog.com/](http://keepachangelog.com/). Versioning follows [Semantic Versioning](http://semver.org/).
 
+## 1.2.2 - 2018-08-29
+
+### Changed
+
+- Removed test code from master branch and added Vagrant and Docker test branches. Tests can now be performed on Travis CI
+
 ## 1.2.1 - 2015-05-10
 
 ### Added

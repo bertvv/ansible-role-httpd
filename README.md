@@ -1,5 +1,7 @@
 # Ansible role `httpd`
 
+[![Build Status](https://travis-ci.org/bertvv/ansible-role-http.svg?branch=master)](https://travis-ci.org/bertvv/ansible-role-http)
+
 A simple Ansible role for installing and configuring the Apache web server for RHEL/CentOS 7 and Fedora 21+. Specifically, the responsibilities of this role are to:
 
 - Install the necessary packages;
