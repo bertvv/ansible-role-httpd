@@ -1,4 +1,4 @@
-# Apache HTTP server -- main configuration
+# Apache HTTP server - main configuration
 #
 # {{ ansible_managed }}
 
@@ -19,7 +19,7 @@ ServerName {{ httpd_ServerName }}
 
 ServerTokens {{ httpd_ServerTokens }}
 
-# Deny general access to filesystem.
+# Deny access to the entirety of your server's filesystem.
 <Directory />
     AllowOverride none
     Require all denied
@@ -27,7 +27,7 @@ ServerTokens {{ httpd_ServerTokens }}
 
 DocumentRoot {{ httpd_DocumentRoot }}
 
-# Relax access in /var/www
+# Relax access to content within /var/www.
 <Directory "/var/www">
     AllowOverride None
     Require all granted
@@ -54,6 +54,7 @@ DocumentRoot {{ httpd_DocumentRoot }}
 ErrorLog "{{ httpd_ErrorLog }}"
 LogLevel {{ httpd_LogLevel }}
 
+
 <IfModule log_config_module>
     LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
     LogFormat "%h %l %u %t \"%r\" %>s %b" common
@@ -77,10 +78,8 @@ LogLevel {{ httpd_LogLevel }}
     Require all granted
 </Directory>
 
-# Mime types
 <IfModule mime_module>
     TypesConfig /etc/mime.types
-
     AddType application/x-compress .Z
     AddType application/x-gzip .gz .tgz
     AddType text/html .shtml
@@ -95,5 +94,7 @@ AddDefaultCharset UTF-8
 
 EnableSendfile on
 
-# Load other configuration files
+# Supplemental configuration
 IncludeOptional conf.d/*.conf
+
+# vim: ft=apache
