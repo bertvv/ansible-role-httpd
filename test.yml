@@ -15,5 +15,4 @@
         dest: /var/www/html/index.php
         line: '<?php phpinfo(); ?>'
         regexp: '^<\?php'
-        create: yes
-
+        create: true
