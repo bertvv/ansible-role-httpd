@@ -1,7 +1,8 @@
 ---
 galaxy_info:
   author: Bert Van Vreckem
-  description: Install and manage the Apache web server on a RedHat based Linux distribution
+  description: >
+    Installs the Apache web server on a RedHat based Linux distribution.
   license: BSD
   min_ansible_version: 2.0
   platforms:
@@ -10,7 +11,7 @@ galaxy_info:
         - 7
     - name: Fedora
       versions:
-        - 25
+        - 28
   categories:
     - web
 dependencies: []
