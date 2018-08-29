@@ -35,4 +35,4 @@ httpd_SSLHonorCipherOrder: 'on'
 httpd_StatusEnable: false
 httpd_StatusLocation: '/server-status'
 httpd_StatusRequire: 'host localhost'
-httpd_ExtendedStatus: on
+httpd_ExtendedStatus: 'On'
