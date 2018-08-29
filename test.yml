@@ -3,6 +3,9 @@
 
 - hosts: all
   become: true
+  vars:
+    httpd_StatusEnable: true
+    httpd_StatusRequire: 'all granted'
   roles:
     - role_under_test
   post_tasks:
