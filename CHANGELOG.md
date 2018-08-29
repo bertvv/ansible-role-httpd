@@ -4,7 +4,11 @@ This file contains al notable changes to the bertvv.httpd Ansible role.
 
 This file adheres to the guidelines of [http://keepachangelog.com/](http://keepachangelog.com/). Versioning follows [Semantic Versioning](http://semver.org/).
 
-## 1.2.2 - 2018-08-29
+## 1.3.0 - 2018-08-29
+
+### Added
+
+- (GH-5) Support for `mod_status` (credit: [Lander Van den Bulcke](https://github.com/landervdb))
 
 ### Changed
 
