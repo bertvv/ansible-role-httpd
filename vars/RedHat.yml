@@ -12,4 +12,4 @@ httpd_scripting_packages:
     - php-xml
 
 httpd_config: /etc/httpd/conf/httpd.conf
-httpd_ssl_config:  /etc/httpd/conf.d/ssl.conf
+httpd_ssl_config: /etc/httpd/conf.d/ssl.conf
