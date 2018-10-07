@@ -4,8 +4,21 @@
 - hosts: all
   become: true
   vars:
-    httpd_StatusEnable: true
-    httpd_StatusRequire: 'all granted'
+    httpd_access_log: logs/my_access_log
+    httpd_access_log_ssl: logs/my_access_log_ssl
+    httpd_error_log: logs/my_error_log
+    httpd_error_log_ssl: logs/my_error_log_ssl
+    httpd_listen: 8080
+    httpd_listen_ssl: 8443
+    httpd_log_level: debug
+    httpd_log_level_ssl: debug
+    httpd_server_admin: admin@acme-inc.com
+    httpd_server_tokens: Full
+    httpd_ssl_certificate_file: custom.crt
+    httpd_ssl_certificate_key_file: custom.key
+    httpd_status_enable: true
+    httpd_status_location: '/status'
+    httpd_status_require: 'all granted'
   roles:
     - role_under_test
   post_tasks:
