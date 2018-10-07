@@ -1,0 +1,45 @@
+# roles/httpd/tasks/certificates.yml
+# Install certificate files on the target host
+---
+
+- name: Check if default SSL certificate exists
+  stat:
+    path: "{{ httpd_cert_dir }}/localhost.crt"
+  register: ssl_cert_file
+  when: httpd_ssl_certificate_file == 'localhost.crt'
+  tags: httpd
+
+- name: Generate default SSL certificate
+  command: /usr/libexec/httpd-ssl-gencerts
+  when: >
+    httpd_ssl_certificate_file == 'localhost.crt'
+    and not ssl_cert_file.stat.exists
+  tags: httpd
+
+- name: Copy user defined key file
+  copy:
+    src: "{{ httpd_ssl_certificate_key_file }}"
+    dest: "{{ httpd_key_dir }}/{{ httpd_ssl_certificate_key_file }}"
+  when: httpd_ssl_certificate_key_file != 'localhost.key'
+  tags: httpd
+
+- name: Copy custom certificate file
+  copy:
+    src: "{{ httpd_ssl_certificate_file }}"
+    dest: "{{ httpd_cert_dir }}/{{ httpd_ssl_certificate_file }}"
+  when: httpd_ssl_certificate_file != 'localhost.crt'
+  tags: httpd
+
+- name: Copy custom certificate chain file
+  copy:
+    src: "{{ httpd_ssl_certificate_chain_file }}"
+    dest: "{{ httpd_cert_dir }}/{{ httpd_ssl_certificate_chain_file }}"
+  when: httpd_ssl_certificate_chain_file is defined
+  tags: httpd
+
+- name: Copy custom CA certificate file
+  copy:
+    src: "{{ httpd_ssl_ca_certificate_file }}"
+    dest: "{{ httpd_cert_dir }}/{{ httpd_ssl_ca_certificate_file }}"
+  when: httpd_ssl_ca_certificate_file is defined
+  tags: httpd
