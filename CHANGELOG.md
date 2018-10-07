@@ -4,6 +4,25 @@ This file contains al notable changes to the bertvv.httpd Ansible role.
 
 This file adheres to the guidelines of [http://keepachangelog.com/](http://keepachangelog.com/). Versioning follows [Semantic Versioning](http://semver.org/).
 
+## 2.0.0 - 2018-10-07
+
+This release has several breaking changes (see below), so check your playbooks/variable files before upgrading from an earlier version!
+
+### Added
+
+- Support for [Certificate Status Request](https://tools.ietf.org/html/rfc6066.html) extension of the [Online Certificate Status Protocol (OCSP)](https://tools.ietf.org/html/rfc2560) ([SSLUseStapling](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html#sslusestapling))
+- Copy custom server certificate/key file to the server. **This is a breaking change!** In previous versions, the complete path of the certificate files had to be specified, and the user had to put the files in place before applying this role. Now, only the file names should be given. The role will copy the specified files from the `files/` subdirectory (relative to the playbook location) to the appropriate directory on the server.
+
+### Changed
+
+- Updated TLS/SSL settings as recommended by Mozilla SSL Configuration Generator
+- Replace CamelCase in role variable names with underscore/lowercase naming. This is consistent with naming conventions in other Ansible roles. **This is a breaking change!**
+- Ensures the default self-signed certificate files are created on platforms where they are missing after installing `mod_ssl`. See [Fedora issue #1585533](https://bugzilla.redhat.com/show_bug.cgi?id=1585533).
+
+### Removed
+
+- Installation of packages enabling support for scripting languages. Only PHP was supported, and there were no plans (nor requests) to add other languages. Furthermore, this is actually not a concern of this role. A role installing a web application on this server should take care of all dependencies, including the appropriate scripting language support. **This is a breaking change!**
+
 ## 1.3.0 - 2018-08-29
 
 ### Added
