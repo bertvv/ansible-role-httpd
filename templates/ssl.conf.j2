@@ -3,7 +3,7 @@
 # {{ ansible_managed }}
 
 # Listen on port
-Listen {{ httpd_Listen_ssl }} https
+Listen {{ httpd_listen_ssl }} https
 
 ## SSL Global Context
 SSLPassPhraseDialog exec:/usr/libexec/httpd-ssl-pass-dialog
@@ -14,25 +14,25 @@ SSLRandomSeed connect builtin
 SSLCryptoDevice builtin
 
 ## SSL Virtual Host Context
-<VirtualHost _default_:{{ httpd_Listen_ssl }}>
+<VirtualHost _default_:{{ httpd_listen_ssl }}>
 
-ErrorLog {{ httpd_ErrorLog_ssl }}
-TransferLog {{ httpd_AccessLog }}
-LogLevel {{ httpd_LogLevel_ssl }}
+ErrorLog {{ httpd_error_log_ssl }}
+TransferLog {{ httpd_access_log }}
+LogLevel {{ httpd_log_level_ssl }}
 
 SSLEngine on
-SSLProtocol {{ httpd_SSLProtocol }}
-SSLCipherSuite {{ httpd_SSLCipherSuite }}
-SSLHonorCipherOrder {{ httpd_SSLHonorCipherOrder }}
+SSLProtocol {{ httpd_ssl_protocol }}
+SSLCipherSuite {{ httpd_ssl_cipher_suite }}
+SSLHonorCipherOrder {{ httpd_ssl_honor_cipher_order }}
 
 # Certificate files
-SSLCertificateFile {{ httpd_SSLCertificateFile }}
-SSLCertificateKeyFile {{ httpd_SSLCertificateKeyFile }}
-{% if httpd_SSLCertificateChainFile is defined %}
-SSLCertificateChainFile {{ httpd_SSLCertificateChainFile }}
+SSLCertificateFile {{ httpd_cert_dir }}/{{ httpd_ssl_certificate_file }}
+SSLCertificateKeyFile {{ httpd_key_dir }}/{{ httpd_ssl_certificate_key_file }}
+{% if httpd_ssl_certificate_chain_file is defined %}
+SSLCertificateChainFile {{ httpd_cert_dir }}/{{ httpd_ssl_certificate_chain_file }}
 {% endif %}
-{% if httpd_SSLCACertificateFile is defined %}
-SSLCACertificateFile {{ httpd_SSLCACertificateFile }}
+{% if httpd_ssl_ca_certificate_file is defined %}
+SSLCACertificateFile {{ httpd_cert_dir }}/{{ httpd_ssl_ca_certificate_file }}
 {% endif %}
 
 <Files ~ "\.(cgi|shtml|phtml|php3?)$">

@@ -3,8 +3,8 @@
 # {{ ansible_managed }}
 
 ## General configuration
-ServerRoot {{ httpd_ServerRoot }}
-Listen {{ httpd_Listen }}
+ServerRoot {{ httpd_server_root }}
+Listen {{ httpd_listen }}
 
 Include conf.modules.d/*.conf
 
@@ -12,12 +12,12 @@ User apache
 Group apache
 
 ## 'Main' server configuration
-ServerAdmin {{ httpd_ServerAdmin }}
-{% if httpd_ServerName is defined %}
-ServerName {{ httpd_ServerName }}
+ServerAdmin {{ httpd_server_admin }}
+{% if httpd_server_name is defined %}
+ServerName {{ httpd_server_name }}
 {% endif %}
 
-ServerTokens {{ httpd_ServerTokens }}
+ServerTokens {{ httpd_server_tokens }}
 
 # Deny access to the entirety of your server's filesystem.
 <Directory />
@@ -25,7 +25,7 @@ ServerTokens {{ httpd_ServerTokens }}
     Require all denied
 </Directory>
 
-DocumentRoot {{ httpd_DocumentRoot }}
+DocumentRoot {{ httpd_document_root }}
 
 # Relax access to content within /var/www.
 <Directory "/var/www">
@@ -34,7 +34,7 @@ DocumentRoot {{ httpd_DocumentRoot }}
 </Directory>
 
 # Further relax access to the default document root:
-<Directory "{{ httpd_DocumentRoot }}">
+<Directory "{{ httpd_document_root }}">
     Options Indexes FollowSymLinks
     AllowOverride None
     Require all granted
@@ -51,8 +51,8 @@ DocumentRoot {{ httpd_DocumentRoot }}
 </Files>
 
 # Logging
-ErrorLog "{{ httpd_ErrorLog }}"
-LogLevel {{ httpd_LogLevel }}
+ErrorLog "{{ httpd_error_log }}"
+LogLevel {{ httpd_log_level }}
 
 
 <IfModule log_config_module>
@@ -64,7 +64,7 @@ LogLevel {{ httpd_LogLevel }}
       LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\" %I %O" combinedio
     </IfModule>
 
-    CustomLog "{{ httpd_AccessLog }}" combined
+    CustomLog "{{ httpd_access_log }}" combined
 </IfModule>
 
 # CGI

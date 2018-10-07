@@ -2,6 +2,7 @@
 ---
 
 httpd_packages:
+  - hostname  # needed for generating default certificate file
   - httpd
   - mod_ssl
 
@@ -14,3 +15,6 @@ httpd_scripting_packages:
 httpd_config: /etc/httpd/conf/httpd.conf
 httpd_ssl_config: /etc/httpd/conf.d/ssl.conf
 httpd_status_config: /etc/httpd/conf.d/status.conf
+
+httpd_cert_dir: /etc/pki/tls/certs
+httpd_key_dir: /etc/pki/tls/private
