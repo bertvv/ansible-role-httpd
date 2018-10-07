@@ -14,20 +14,6 @@
   with_items: "{{ httpd_packages }}"
   tags: httpd
 
-- name: Install scripting support if needed
-  package:
-    name: "{{ item }}"
-    state: present
-  with_items: "{{ httpd_scripting_packages[httpd_scripting] }}"
-  tags: httpd
-
-- name: Ensure Apache is always running
-  service:
-    name: httpd
-    state: started
-    enabled: true
-  tags: httpd
-
 - name: Install main configuration file
   template:
     src: httpd.conf.j2
@@ -49,7 +35,11 @@
     mode: '0644'
   notify: restart httpd
   tags: httpd
-  when: httpd_StatusEnable
+  when: httpd_status_enable
+
+- name: Install certificate files
+  include_tasks: certificates.yml
+  tags: httpd
 
 - name: Install mod_ssl configuration file
   template:
@@ -60,4 +50,11 @@
     setype: httpd_config_t
     mode: '0644'
   notify: restart httpd
+  tags: httpd
+
+- name: Ensure Apache is always running
+  service:
+    name: httpd
+    state: started
+    enabled: true
   tags: httpd
