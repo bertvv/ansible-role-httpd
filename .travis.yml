@@ -6,9 +6,8 @@ env:
   matrix:
     - DISTRIBUTION: centos
       VERSION: 7
-
-# - DISTRIBUTION: fedora
-#   VERSION: 28
+    - DISTRIBUTION: fedora
+      VERSION: 28
 
 services:
   - docker
