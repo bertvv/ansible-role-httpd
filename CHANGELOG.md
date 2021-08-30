@@ -4,6 +4,12 @@ This file contains al notable changes to the bertvv.httpd Ansible role.
 
 This file adheres to the guidelines of [http://keepachangelog.com/](http://keepachangelog.com/). Versioning follows [Semantic Versioning](http://semver.org/).
 
+## 2.0.1 - 2021-08-30
+
+### Changed
+
+- Add some rules to search for distribution-specific variable files so AlmaLinux (and probably also Rocky Linux) are also recognized and supported.
+
 ## 2.0.0 - 2018-10-07
 
 This release has several breaking changes (see below), so check your playbooks/variable files before upgrading from an earlier version!
